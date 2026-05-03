@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-debug.log
+
+# Next.js
+.next/
+out/
+
+# Env
+.env.local
+.env.*.local
+
+# DB (keep dev.db for demo purposes but ignore in prod)
+# prisma/dev.db
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

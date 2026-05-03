@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String       @id @default(cuid())
+  name        String
+  email       String       @unique
+  password    String
+  createdAt   DateTime     @default(now())
+  quizResults QuizResult[]
+}
+
+model Question {
+  id            String   @id @default(cuid())
+  text          String
+  options       String   // JSON array of option strings
+  correctAnswer Int
+  category      String
+  difficulty    String   @default("medium")
+  explanation   String?
+  createdAt     DateTime @default(now())
+}
+
+model QuizResult {
+  id             String   @id @default(cuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+  score          Int
+  totalQuestions Int
+  timeTaken      Int      @default(0)
+  answers        String   // JSON: { questionId: selectedIndex }
+  completedAt    DateTime @default(now())
+}
