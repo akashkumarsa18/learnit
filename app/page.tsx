@@ -24,7 +24,7 @@ export default function LandingPage() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-7xl font-extrabold mb-6 leading-tight">
+        <h1 className="font-display text-5xl sm:text-7xl font-bold mb-6 leading-tight tracking-tight">
           <span className="bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent glow-text">
             Test Your
           </span>
@@ -82,10 +82,10 @@ export default function LandingPage() {
 
       {/* Features */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-white">
+        <h2 className="font-display text-3xl sm:text-4xl font-semibold text-center mb-4 text-[var(--qc-fg-1)]">
           Everything You Need
         </h2>
-        <p className="text-white/50 text-center mb-12 text-lg">Packed with features to make learning fun and effective</p>
+        <p className="text-[var(--qc-fg-5)] text-center mb-12 text-lg">Packed with features to make learning fun and effective</p>
 
         <div className="grid sm:grid-cols-3 gap-6">
           {[
@@ -112,8 +112,8 @@ export default function LandingPage() {
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${f.color} flex items-center justify-center mb-4`}>
                 <f.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{f.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed">{f.desc}</p>
+              <h3 className="font-display text-lg font-semibold text-[var(--qc-fg-1)] mb-2">{f.title}</h3>
+              <p className="text-[var(--qc-fg-4)] text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -123,8 +123,8 @@ export default function LandingPage() {
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-16 text-center">
         <div className="glass-strong rounded-3xl p-10">
           <BookOpen className="w-12 h-12 text-purple-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold text-white mb-3">Ready to Test Yourself?</h2>
-          <p className="text-white/55 mb-8 text-lg">Join thousands of learners who use LearnIt every day.</p>
+          <h2 className="font-display text-3xl font-bold text-[var(--qc-fg-1)] mb-3">Ready to Test Yourself?</h2>
+          <p className="text-[var(--qc-fg-4)] mb-8 text-lg">Join thousands of learners who use LearnIt every day.</p>
           {session ? (
             <button
               onClick={() => router.push('/quiz')}
